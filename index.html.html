@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmación de Asistencia - Cumpleaños de Yaqueline</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #fdf0f4; 
+            margin: 0; 
+            padding: 20px; 
+            color: #4a3b40; 
+        }
+        .card { 
+            max-width: 480px; 
+            margin: 0 auto; 
+            background: #ffffff; 
+            border-radius: 20px; 
+            padding: 25px; 
+            box-shadow: 0 8px 20px rgba(224, 150, 175, 0.2); 
+            border: 2px solid #f2a2b8; 
+            position: relative;
+            overflow: hidden;
+        }
+        .floral-header {
+            text-align: center;
+            font-size: 22px;
+            margin-bottom: 5px;
+        }
+        h1 { 
+            text-align: center; 
+            color: #d85d82; 
+            margin-top: 5px;
+            margin-bottom: 5px; 
+            font-size: 26px; 
+        }
+        .subtitle { 
+            text-align: center; 
+            color: #b56576; 
+            font-weight: bold; 
+            font-size: 13px; 
+            letter-spacing: 1px; 
+            margin-bottom: 5px; 
+        }
+        .slogan { 
+            text-align: center; 
+            font-style: italic; 
+            color: #8d5b68; 
+            font-size: 13px; 
+            margin-bottom: 20px; 
+        }
+        label { 
+            font-size: 15px; 
+            color: #5c3a44; 
+            font-weight: bold;
+        }
+        input[type="text"] { 
+            width: 100%; 
+            padding: 12px; 
+            margin: 8px 0 15px 0; 
+            border: 1px solid #f2b6c6; 
+            border-radius: 10px; 
+            box-sizing: border-box; 
+            font-size: 16px; 
+            background-color: #fff8fa;
+            outline-color: #d85d82;
+        }
+        .category { margin-top: 20px; }
+        .category h3 { 
+            color: #722f37; 
+            background-color: #fce4ec; 
+            padding: 8px 14px; 
+            border-radius: 8px; 
+            font-size: 15px; 
+            margin-bottom: 10px; 
+            border-left: 4px solid #e88d87;
+        }
+        .grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 8px; }
+        .option-card { 
+            border: 2px solid #f8d7da; 
+            border-radius: 12px; 
+            padding: 12px; 
+            text-align: center; 
+            cursor: pointer; 
+            transition: 0.2s; 
+            background-color: #fff9fa; 
+        }
+        .option-card p { font-weight: bold; margin: 0; font-size: 14px; color: #5a3e46; }
+        .option-card.selected { 
+            border-color: #e85a71; 
+            background-color: #fce8ec; 
+            box-shadow: 0 2px 8px rgba(232, 90, 113, 0.2);
+        }
+        .btn-submit { 
+            display: block; 
+            width: 100%; 
+            background-color: #25D366; 
+            color: white; 
+            border: none; 
+            padding: 15px; 
+            font-size: 16px; 
+            font-weight: bold; 
+            border-radius: 10px; 
+            cursor: pointer; 
+            margin-top: 25px; 
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            transition: 0.2s;
+        }
+        .btn-submit:hover { background-color: #20ba5a; }
+        hr { border: 0; border-top: 1px solid #f8d7da; margin: 15px 0; }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="floral-header">🌸 🌺 🌸</div>
+    <h1>¡Cumpleaños de Yaqueline!</h1>
+    <div class="subtitle">LA RAMADA DE RAMÓN</div>
+    <div class="slogan">Buena comida, mejores momentos ♡</div>
+    
+    <label>¡Hola Yaqueline! Soy:</label>
+    <input type="text" id="nombre" placeholder="Escribe tu nombre y apellido">
+    
+    <hr>
+    <h2 style="text-align: center; color: #d85d82; font-size: 18px; margin-top: 5px;">🌸 Selección del Menú 🌸</h2>
+
+    <!-- PRIMEROS -->
+    <div class="category">
+        <h3>1. Primeros</h3>
+        <div class="grid" id="primeros">
+            <div class="option-card" onclick="selectOption('primeros', this, 'Ensalada de la huerta')">
+                <p>Ensalada de la huerta</p>
+            </div>
+            <div class="option-card" onclick="selectOption('primeros', this, 'Canelones gratinados')">
+                <p>Canelones gratinados</p>
+            </div>
+            <div class="option-card" onclick="selectOption('primeros', this, 'Cóctel de gambas')">
+                <p>Cóctel de gambas</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- SEGUNDOS -->
+    <div class="category">
+        <h3>2. Segundos</h3>
+        <div class="grid" id="segundos">
+            <div class="option-card" onclick="selectOption('segundos', this, 'Sepia a la brasa')">
+                <p>Sepia a la brasa</p>
+            </div>
+            <div class="option-card" onclick="selectOption('segundos', this, 'Secreto de cerdo')">
+                <p>Secreto de cerdo</p>
+            </div>
+            <div class="option-card" onclick="selectOption('segundos', this, 'Entrecot de ternera')">
+                <p>Entrecot de ternera</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- POSTRE -->
+    <div class="category">
+        <h3>3. Postre</h3>
+        <div class="grid" id="postre">
+            <div class="option-card" onclick="selectOption('postre', this, 'Flan de huevo')">
+                <p>Flan de huevo</p>
+            </div>
+            <div class="option-card" onclick="selectOption('postre', this, 'Tarta de queso')">
+                <p>Tarta de queso</p>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn-submit" onclick="enviarWhatsApp()">Confirmar Asistencia</button>
+</div>
+
+<script>
+    let selecciones = {};
+
+    function selectOption(categoria, element, valor) {
+        let container = document.getElementById(categoria);
+        let cards = container.getElementsByClassName('option-card');
+        for (let card of cards) {
+            card.classList.remove('selected');
+        }
+        element.classList.add('selected');
+        selecciones[categoria] = valor;
+    }
+
+    function enviarWhatsApp() {
+        let nombre = document.getElementById('nombre').value;
+        if (!nombre) { alert('Por favor escribe tu nombre.'); return; }
+        
+        let texto = `¡Hola Yaqueline! Soy *${nombre}* y confirmo mi asistencia.\n\n` +
+                    `*Mis elecciones para el menú:*\n` +
+                    `• Primeros: ${selecciones['primeros'] || 'No seleccionado'}\n` +
+                    `• Segundos: ${selecciones['segundos'] || 'No seleccionado'}\n` +
+                    `• Postre: ${selecciones['postre'] || 'No seleccionado'}`;
+        
+        let numeroTelefono = "34664606163"; 
+        window.open(`https://api.whatsapp.com/send?phone=${numeroTelefono}&text=${encodeURIComponent(texto)}`, '_blank');
+    }
+</script>
+
+</body>
+</html>
